@@ -1,0 +1,27 @@
+# Backend Dockerfile
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY backend/requirements.txt /app/backend/
+
+# Install dependencies
+RUN pip install --no-cache-dir -r backend/requirements.txt
+
+# Copy backend code
+COPY backend/ /app/backend/
+
+# Create directories for data and models
+RUN mkdir -p /app/backend/data /app/backend/models
+
+# Expose port
+EXPOSE 5000
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV FLASK_APP=backend/app.py
+
+# Run the application
+CMD ["python", "backend/app.py"]
