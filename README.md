@@ -357,10 +357,8 @@ This project is open source and available for educational purposes.
 
 Contributions are welcome! Feel free to submit issues and pull requests.
 
-## 📧 Contact
 
-For questions or feedback, please open an issue in the repository.
 
 ---
 
-**Built with ❤️ using Flask, scikit-learn, and React**
+**Built by Aqib ARPZ**
